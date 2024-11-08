@@ -1469,4 +1469,9 @@
   </project>
   <!-- END open-source projects -->
 
+  <!-- NexOS -->
+  <include name="snippets/remove.xml" />
+  <include name="snippets/lineage.xml" />
+  <include name="snippets/nex.xml" />
+
 </manifest>

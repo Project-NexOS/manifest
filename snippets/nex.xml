@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="NexOS"
+      fetch="https://github.com/Project-NexOS"
+           revision="refs/heads/fifteen" />
+
+  <remote  name="gitlab"
+           fetch="https://gitlab.com/" />
+
+  <!-- Rootdir -->
+  <project path="bionic" name="bionic" groups="pdk" remote="NexOS" />
+  <project path="art" name="art" groups="pdk" remote="NexOS" />
+
+  <!-- Bootable -->
+  <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="NexOS" />
+
+  <!-- Build -->
+  <project path="build/make" name="build" groups="pdk" remote="NexOS">
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="NexOS">
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <!-- external -->
+  <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" remote="NexOS" />
+  <project path="external/arm-optimized-routines" name="external_arm-optimized-routines" groups="pdk" remote="NexOS" />
+  <project path="external/skia" name="external_skia" groups="pdk" remote="NexOS" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="NexOS" />
+  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="NexOS" />
+  <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="NexOS" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" groups="pdk" remote="NexOS" />
+
+  <!-- Hardware -->
+  <project path="hardware/google/pixel-sepolicy" name="hardware_google_pixel-sepolicy" groups="generic_fs,pixel" remote="NexOS" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="NexOS" />
+  <project path="packages/apps/NexCore" name="packages_apps_NexCore" remote="NexOS" />
+  <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" groups="pdk" remote="NexOS" />
+  <project path="packages/overlays/ThemeIcons" name="packages_overlays_ThemeIcons" remote="NexOS" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="NexOS" />
+  <project path="packages/apps/ParanoidSense" name="packages_apps_ParanoidSense" remote="NexOS" />
+  <project path="packages/apps/TouchGestures" name="packages_apps_TouchGestures" remote="NexOS" />
+  <project path="packages/apps/GameSpace" name="packages_apps_GameSpace" remote="NexOS" />
+
+  <!-- System -->
+  <project path="system/core" name="system_core" groups="pdk" remote="NexOS" />
+  <project path="system/sepolicy" name="system_sepolicy" groups="pdk" remote="NexOS" />
+  <project path="system/memory/lmkd" name="system_memory_lmkd" groups="pdk" remote="NexOS" />
+  <project path="system/update_engine" name="system_update_engine" groups="pdk" remote="NexOS" />
+
+  <!-- Device -->
+  <project path="device/lineage/sepolicy" name="device_nex_sepolicy" remote="NexOS" />
+
+  <!-- Vendor -->
+  <project path="vendor/aosp" name="vendor_nex" remote="NexOS" />
+  <project path="vendor/custom-preference" name="vendor_custom-preference" remote="NexOS" />
+  <project path="vendor/gms" name="PixelOS-AOSP/vendor_gms" clone-depth="1" revision="fifteen" remote="gitlab" />
+  <project path="vendor/aosp/extras" name="kei-space/pixelos/vendor_extras" revision="fifteen" remote="gitlab" />
+
+  <!-- Extra -->
+  <project path="hardware/qcom-caf/sm8450/audio/agm" name="hardware_qcom-caf_sm8450_audio_agm" groups="qcom,waipio-vendor" revision="lineage-22.0-caf-sm8450" remote="NexOS" />
+
+</manifest>
