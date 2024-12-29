@@ -2,10 +2,11 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/android-15.0.0_r5"
-           remote="aosp"
+           fetch="https://android.googlesource.com"
+           review="android-review.googlesource.com"
+           revision="refs/tags/android-15.0.0_r5" />
+
+  <default remote="aosp"
            sync-j="4" />
 
   <superproject name="platform/superproject" remote="aosp" revision="android-15.0.0_r5"/>
